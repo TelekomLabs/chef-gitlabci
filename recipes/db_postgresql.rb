@@ -28,14 +28,14 @@ end
 
 # create the gitlabci database & grant all privileges on database
 gitlabci['environments'].each do |environment|
-  postgresql_database "gitlabci_#{environment}" do
+  postgresql_database "gitlab_ci_#{environment}" do
     connection postgresql_connexion
     action :create
   end
 
   postgresql_database_user gitlabci['user'] do
     connection postgresql_connexion
-    database_name "gitlabci_#{environment}"
+    database_name "gitlab_ci_#{environment}"
     password gitlabci['database_password']
     action :grant
   end

@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
     server.vm.provision :chef_solo do |chef|
       chef.json = {
         :gitlabci => {
-          :database_adapter => "mysql",
+          :database_adapter => "postgresql",
           :database_password => "datapass",
           :env => "production",
           :production => {
@@ -34,6 +34,11 @@ Vagrant.configure("2") do |config|
           :server_root_password => "rootpass",
           :server_repl_password => "replpass",
           :server_debian_password => "debianpass"
+        },
+        :postgresql => {
+          :password => {
+            :postgres => "psqlpass"
+          }
         },
       }
       chef.run_list = [
