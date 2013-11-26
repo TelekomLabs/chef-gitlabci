@@ -8,6 +8,8 @@ Chef to install GitLab CI.
 
 This cookbook is inspired by the excellent [Gitlab Cookbook](https://github.com/ogom/cookbook-gitlab) from oogm and is developed to work well with this cookbook. It will work with others, too. For security reasons we decided to use docker for all gitlab ci runner. This enables us to quickly create and destroy runner. 
 
+Warning: This cookbook is still in development. `gitlabci:server` with mysql is quite well testen. Postgre and runner deployment is still in early development.
+
 ## Requirements
 
 * [Berkshelf](http://berkshelf.com/)
