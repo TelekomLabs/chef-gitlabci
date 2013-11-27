@@ -59,9 +59,10 @@ Vagrant.configure("2") do |config|
     runner.vm.provision :chef_solo do |chef|
       chef.json = {
         :gitlabci => {
-          :database_adapter => "mysql",
-          :database_password => "datapass",
-          :env => "production"
+          :runner => {
+            :ciserver => "https://ci.example.com",
+            :ciregistrationtoken => "replaceme"
+          }
         }
       }
       chef.run_list = [
