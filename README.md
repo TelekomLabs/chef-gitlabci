@@ -36,9 +36,9 @@ Warning: This cookbook is still in development. `gitlabci:server` with mysql is 
 
 ```bash
 $ gem install berkshelf
-$ vagrant plugin install vagrant-berkshelf
+$ vagrant plugin install vagrant-berkshelf --plugin-version '>= 2.0.1'
 $ vagrant plugin install vagrant-omnibus
-$ git clone git://github.com/chris-rock/cookbook-gitlabci ./gitlabci
+$ git clone https://github.com/chris-rock/chef-gitlabci.git ./gitlabci
 $ cd ./gitlabci
 $ vagrant up server
 $ vagrant up runner
